@@ -11,7 +11,6 @@ select * from author where id>=2 and name='홍길동';
 select * from author where id in (2,3,4);
 
 -- 중복 제거 조회 : distinct 
-select name from author;
 select distinct name from author;
 
 -- 정렬 : order by + 컬럼명
@@ -52,6 +51,6 @@ delete from author where id=4;
 -- 이름이 '홍길동'인 글쓴이가 쓴 글 목록 조회 
 select * from author where name='홍길동';
 select * from post where id in (2,3);
-select * from post where id in (select id from author where name='홍길동');
+select * from post where author_id in(select id from author where name='홍길동');
 
 -- 프로그래머스 sql 문제풀이
