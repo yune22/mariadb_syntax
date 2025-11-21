@@ -31,7 +31,7 @@ select name as '이름', email as '이메일' from author;
 select a.name, a.email from author as a;
 select a.name, a.email from author a;
 
--- null을 조회조건으로 활용
+-- null을 조회 조건으로 활용
 select * from author where password is null;
 select * from author where password is not null;
 
@@ -53,4 +53,6 @@ select * from author where name='홍길동';
 select * from post where id in (2,3);
 select * from post where author_id in(select id from author where name='홍길동');
 
--- 프로그래머스 sql 문제풀이
+-- 프로그래머스 sql 문제 풀이
+-- 여러 기준으로 정렬하기
+-- 상위 n개 레코드

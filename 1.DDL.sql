@@ -64,6 +64,9 @@ alter table post change column contents content varchar(255);
 alter table post modify column content varchar(3000); (타입 변경)
 alter table author modify column email varchar(255) not null unique; (제약조건 변경)
 
+-- 테이블 컬럼 제약조건 추가
+alter table post add constraint post_fk foreign key (author_id) references author(id);
+
 -- 실습1. althor테이블에 address컬럼을 추가(varchar 255). name은 not null로 변경.
 describe author;
 alter table author add column address varchar(255);
