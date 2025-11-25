@@ -72,8 +72,9 @@ select cast('20251121' as date); --2025-11-21
 -- 날짜타입변환 - date_format(Y, m, d, H, i, s)
 select date_format(created_time, '%Y-%m-%d') from post; --날짜
 select date_format(created_time, '%H-%i-%s') from post; --시간
-select * from post where date_format(created_time, '%Y')='2025';
 
+-- where문 안에 date_format은 =
+select * from post where date_format(created_time, '%Y')='2025';
 select * from post where date_format(created_time, '%m')='01';
 select * from post where cast(date_format(created_time, '%m') as unsigned) =1;
 
@@ -82,4 +83,4 @@ select * from post where date_format(created_time, '%Y-%m') ='2025-11';
 select * from post where created_time like '2025-11%';
 
 -- 실습 : 2025년 11월 1일부터 19일까지의 데이터 조회                       (<= '2025-11-19' 하면 안됨)
-select * from post where crea and created_time < '202ted_time >= '2025-11-01'5-11-20';
+select * from post where created_time < '2025-11-20' and created_time >= '2025-11-01';

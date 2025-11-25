@@ -6,7 +6,7 @@ alter table author add column post_count int default 0;
 -- start transaction은 실질적인 의미는 없고, 트랜잭션의 시작이라는 상징적인 의미만 있는 코드.
 start transaction;
 update author set post_count=post_count+1 where id=5;
-insert into post(tilte, contents, author_id) values('hello', 'hello...', 100);
+insert into post(title, contents, author_id) values('hello', 'hello...', 5);
 commit;
 
 -- 위 트랜잭션은 실패시 자동으로 rollback이 어려움.
