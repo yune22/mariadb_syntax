@@ -83,3 +83,10 @@ select author_id from post group by author_id having count(*) >=2;
 -- 동명 동물 수 찾기 (having)
 -- 카테고리 별 도서 판매량 집계하기 (join)
 -- 조건에 맞는 사용자와 총 거래금액 조회하기 (join)
+
+-- 다중열  group by byf
+-- group by 첫번째컬럼, 두번째컬럼 : 첫번쨰컬럼으로 grouping 이후에 두번째컬럼으로 grouping
+-- post 테이블에서 작성자별로 구분하여 같은 제목의 글의 개수를 출력하시오.
+select author_id, title, count(*) from post group by author_id, title;
+
+-- 재구매가 일어난 상품과 회원 리스트 구하기
